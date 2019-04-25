@@ -1,4 +1,4 @@
-# ZendSkeletonApplication
+# MAKDI
 
 ## Introduction
 
