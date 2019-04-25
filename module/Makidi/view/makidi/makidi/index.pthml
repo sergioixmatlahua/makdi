@@ -1,0 +1,30 @@
+<?php
+
+$title = "Makdi: Make the Difference";
+$this->headTitle($title);
+ 
+ ?>
+
+h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('makidi', ['action' => 'addAction']) ?>">Registrarse</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Ap. Paterno</th>
+        <th>Ap. Materno</th>
+        <th>&nbsp;</th>
+    </tr>
+<?php foreach ($usuarios as $usuario) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($usuario->nombre) ?></td>
+        <td><?= $this->escapeHtml($usuario->appaterno) ?></td>
+        <td>
+            <a href="<?= $this->url('makidi', ['action' => 'editAction', 'id' => $usuario->idUsuario]) ?>">Editar</a>
+            <a href="<?= $this->url('makidi', ['action' => 'deleteAction', 'id' => $usuario->idUsuario]) ?>">Eliminar</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
